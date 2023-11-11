@@ -1,0 +1,32 @@
+{
+    "vietnam-hochiminhcityhochiminh": {
+        "distName": "TP HCM",
+        "distId":"vietnam-hochiminhcityhochiminh",
+        "clr": "red"
+    },
+    "vietnam-bariavtaubariavungtau": {
+        "distName": "Bà rịa Vũng tàu",
+        "distId":"vietnam-bariavtaubariavungtau",
+        "clr": "pink"
+    },
+    "vietnam-binhduong": {
+        "distName": "Bình Dương",
+        "distId":"vietnam-binhduong",
+        "clr": "yellow"
+    },
+    "vietnam-binhphuoc": {
+        "distName": "Bình Phước",
+        "distId":"vietnam-binhphuoc",
+        "clr": "blue"
+    },
+    "vietnam-dongnai": {
+        "distName": "Đồng Nai",
+        "distId":"vietnam-dongnai",
+        "clr": "organge"
+    },
+    "vietnam-tayninh": {
+        "distName": "Tây Ninh",
+        "distId":"vietnam-tayninh",
+        "clr": "green"
+    }
+}

@@ -1,0 +1,290 @@
+@import "inc/global";
+
+#map {
+    height: 100%;
+    width: 100%;
+    position: absolute!important;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.info.leaflet-control{
+    color: #fff;
+    padding: 15px;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #17a2b8;
+    @include backdrop-blur();
+    // box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    // border: 2px solid rgba(255, 232, 149, 0.6);
+    border-radius: 10px;
+    max-width: 100%;
+    h4{
+        font-size: 18px;
+        font-weight: 700;
+    }
+    p{
+        margin-bottom: 8px;
+    }
+}
+
+
+.header{
+    background: $theme-value;
+    margin-top: 15px;
+    margin-left: 50px;
+    padding: 10px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    @include backdrop-blur();
+    display: table;
+    position: absolute;
+    min-width: 388px;
+    max-width: 100%;
+    .form-search{
+        flex: 1;
+        padding-right: 0;
+        >.input-gr{
+            position: relative;
+            input{
+                font-size: 14px;
+                border-radius: 50px;
+            }
+            >button{
+                font-size: 14px;
+                font-weight: 500;
+                border-radius: 50px;
+                position: absolute;
+                top: 2px;
+                right: 2px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 50px;
+                height: calc(100% - 4px);
+                padding: 0;
+                @media screen and (min-width: 500px){
+                    top: 4px;
+                    right: 4px;
+                    height: calc(100% - 8px);
+                }
+            }
+        } 
+    }
+
+    .menu{
+        font-size: 14px;
+        font-weight: 500;
+        button{
+            border: none;
+            background: none;
+        }
+    }
+}
+
+
+.control{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    .nav-wrapper{
+        padding: 10px 15px;
+        display: flex;
+        flex-wrap: wrap;
+        @media screen and(min-width: 500px){
+            padding: 15px;
+        }
+        .control-wrapper{
+            flex: 1;
+            display: flex;
+            align-items: center;
+            .control-date{
+                margin-right: 30px;
+                ul{
+                    display: flex;
+                    flex-wrap: wrap;
+                    background-color: $theme-value;
+                    border-radius: 40px;
+                    padding: 0;
+                    li{
+                        a{
+                            color: #fff;
+                            text-align: center;
+                            display: inline-block;
+                            padding: 5px 10px;
+                            font-size: 23px;
+                            line-height: 1;
+                            transition: all ease-in 0.3s;
+                            @media screen and(min-width: 500px){
+                                padding: 7px 12px;
+                            }
+                            &:hover{
+                                color: $color-yellow;
+                            }
+                        }
+                    }
+                }
+            }
+            .control-mode{
+                flex: 1;
+                padding-right: 10px;
+                max-width: 250px;
+                @media screen and(min-width: 500px){
+                    padding-right: 15px;
+                }
+                select{
+                    @include backdrop-blur();
+                    width: 100%;;
+                    padding: 5px 10px;
+                    border-radius: 50px;
+                    background-color: $theme-value;
+                    color: $color-yellow;
+                    font-weight: 500;
+                    font-size: 11.5px;
+                    border: 0;
+                    appearance:none;
+                    position: relative;
+                    &::after{
+                        content:"";
+                    }
+                    @media screen and(min-width: 500px){
+                        font-size: 15px;
+                        padding: 5px 18px;
+                    }
+                }
+            }
+        }
+        .color-range{
+            position: absolute;
+            display: table;
+            left: 10px;
+            bottom: 90px;
+            @media screen and(min-width: 500px){
+                left: auto;
+                right: 10px;
+                bottom: 105px;
+            }
+            ul{
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                li{
+                    padding: 5px 1px;
+                    text-align: center;
+                    font-size: 11.5px;
+                    line-height: 1;
+                    &.value{
+                        color: #333;
+                        font-weight: 500;
+                    }
+                    &.unit{
+                        font-size: 9px;
+                        font-weight: 500;
+                        background-color: #fff ;
+                        @media screen and(min-width: 500px){
+                            font-size: 11px;
+                        }
+                    }
+                    @media screen and(min-width: 500px){
+                        font-size: 12.9px;
+                        padding: 5px 4px;
+                    }
+                }
+            }
+        }
+    }
+    .nav-date{
+        background: $theme-value;
+        @include backdrop-blur();
+        ul{
+            padding: 15px 10px;
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: scroll;
+            @media screen and(min-width: 500px){
+                padding: 15px;
+            }
+            li{
+                &:not(:last-child){
+                    margin-right: 10px;
+                    @media screen and(min-width: 500px){
+                        margin-right: 15px;
+                    }
+                }
+                .date{
+                    position: relative;
+                    background: $theme-value;
+                    display: block;
+                    width: 78px;
+                    padding: 10px 10px;
+                    color: #fff;
+                    text-align: center;
+                    border-radius: 6px;
+                    transition: all ease-out 0.25s;
+                    @media screen and(min-width: 500px){
+                        width: 100px;
+                        padding: 15px;
+                    }
+                    &.current,&.forecast{
+                        &::after{
+                            content: "";
+                            display: table;
+                            font-size: 10px;
+                            font-weight: 700;
+                            line-height: 1;
+                            text-transform: uppercase;
+                            padding: 2px 7px 1px;
+                            color: $color-text;
+                            border-radius: 10px;
+                            position: absolute;
+                            width: fit-content;
+                            top: 0;
+                            left: 50%;
+                            transform: translateX(-50%) translateY(-50%);
+                            border: 1px solid $theme-value;
+                        }
+                    }
+                    &.current{
+                        &::after{
+                            content: "Hôm nay";
+                            background: #4feb7a;
+                        }
+                    }
+                    &.forecast{
+                        &::after{
+                            content: "Dự báo";
+                            background: #90dbf9;
+                        }
+                    }
+                    &.selected{
+                        background-color: $color-yellow;
+                        color: $color-text;
+                    }
+                    h4{
+                        cursor: pointer;
+                        font-size: 14px;
+                        font-weight: 500;
+                        line-height: 1;
+                        margin-bottom: 7px;
+                        @media screen and(min-width: 500px){
+                            font-size: 15px;
+                        }
+                    }
+                    label{
+                        cursor: pointer;
+                        margin: 0;
+                        font-size: 11px;
+                        line-height: 1;
+                        display: block;
+                        @media screen and(min-width: 500px){
+                            font-size: 13px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

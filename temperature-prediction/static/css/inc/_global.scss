@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+$theme-value: rgba(48, 25, 52, 65%);
+$color-dark-blue: rgb(48, 25, 52);
+$color-text: #1A002F;
+$color-yellow: #FFE895;
+
+// MIXINS
+@import "func";
+
+body{
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.54;
+    color: $color-text;
+    overflow-x: hidden;
+    ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    *{
+        outline: none;
+        box-shadow: none;
+    }
+    a, select, button{
+        cursor: pointer;
+    }
+}
+.ui-datepicker-trigger{
+    display: none;
+}
+
+.btn{
+    border-radius: 50px;
+    padding: 5px 15px;
+    font-size: 14px;
+    @media screen and (min-width: 500px) {
+        padding: 7px 17px;
+        font-size: 16px;
+    }
+}
+
+.link{
+    padding: 10px 0;
+    a{
+        color: $color-dark-blue;
+        font-size: 14px;
+        opacity: 0.7;
+        &:hover{
+            opacity: 1;
+        }
+    }
+}
+
+h2{
+    font-size: 20px;
+    line-height: 1.54;
+    @media screen and (min-width: 500px) {
+        font-size: 24px;
+    }
+}
+
+select.form-control{
+    appearance: none;
+    background-image: linear-gradient( 
+    45deg, transparent 50%, $color-text 50%), linear-gradient( 
+    135deg, $color-text 50%, transparent 50%), linear-gradient(to right, transparent, transparent);
+    background-position: calc(100% - 20px) calc(1em + 0px), calc(100% - 15px) calc(1em + 0px), 100% 0px;
+    background-size: 5px 5px, 5px 5px, 2.5em 2.5em;
+    background-repeat: no-repeat;
+    &.arrow-white{
+        background-image: linear-gradient( 
+            45deg, transparent 50%, #fff 50%), linear-gradient( 
+            135deg, #fff 50%, transparent 50%), linear-gradient(to right, transparent, transparent);
+    }
+}
+.form-control{
+    border-radius: 50px;
+    color: $color-text;
+    padding: 4px 12px;
+    @media screen and (min-width: 500px) {
+        padding: 6px 15px;
+    }
+    &:focus{
+        border-color: #deae00;
+        box-shadow: 0 0 0 2px rgb(255, 232,149, 65%);
+    }
+}
+
+//leaflet map
+.leaflet-container .leaflet-control-attribution, .leaflet-container .leaflet-control-scale {
+    font-size: 10px;
+}
+.leaflet-container .leaflet-control-attribution {
+    background: #fff;
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.info.leaflet-control{
+    transition: all ease-out 0.3s;
+    opacity: 0;
+    height: 0;
+    .circle{
+        display: inline-block;
+        background-color: transparent;
+        width: 12px;
+        height: 12px;
+        margin: 0 1px 0 2px;
+        border-radius: 50%;
+    }
+    @media screen and(max-width: 767px){
+        display: none;
+    }
+    @media screen and (min-width: 768px) {
+        min-height: 172px;
+        &.show{
+            opacity: 1;
+            height: auto;
+        }
+    }
+}
+
+.leaflet-div-icon {
+    background: transparent;
+    border: none;
+    .map-label{
+        .map-label-content{
+            font-size: 12px;
+            font-weight: 500;
+            // text-transform: uppercase;
+            color: #fff;
+            text-shadow: 1px 1px 1px rgba(26, 0, 47, 0.68);
+            background: rgba(26, 0, 47, 0.36);
+            text-align: center;
+            display: table;
+            padding: 2px 7px;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+    }
+}

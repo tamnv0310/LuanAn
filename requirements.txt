@@ -1,0 +1,11 @@
+bson==0.5.10
+matplotlib==3.3.4
+pandas>=1.0.0
+numpy>=1.13.3
+flask
+pymongo>=4.0.1
+sentinelhub>=3.4.2
+utils>=1.0.1
+datetime
+tensorflow==2.7.0
+keras

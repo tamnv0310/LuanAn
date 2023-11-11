@@ -1,0 +1,9 @@
+# pip install -r requirements.txt
+# brew install geos
+# pip3 install https://github.com/matplotlib/basemap/archive/master.zip
+# conda install -c anaconda basemap
+
+
+netCDF4
+numpy
+matplotlib

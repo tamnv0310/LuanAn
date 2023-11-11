@@ -1,0 +1,2 @@
+CLIENT_ID = '4529e329-fd65-41ea-b7d3-5705264d39cf'
+CLIENT_SECRET = '&T/|3z41kS![}w#Coyp7JLN(d<<Q[hN@FZ,~)1c8'
