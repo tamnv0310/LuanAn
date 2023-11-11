@@ -7,5 +7,5 @@ pymongo>=4.0.1
 sentinelhub>=3.4.2
 utils>=1.0.1
 datetime
-tensorflow==2.7.0
+# tensorflow==2.7.0
 keras

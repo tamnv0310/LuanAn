@@ -1,0 +1,32 @@
+{
+    "01": {
+        "distName": "Vũng Tàu",
+        "distId":"vungtau",
+        "clr": "blue"
+    },
+    "02": {
+        "distName": "Đồng Nai",
+        "distId":"dongnai",
+        "clr": "red"
+    },
+    "03": {
+        "distName": "Bình Phước",
+        "distId":"binhphuoc",
+        "clr": "green"
+    },
+    "04": {
+        "distName": "Tây Ninh",
+        "distId":"tayninh",
+        "clr": "yellow"
+    },
+    "05": {
+        "distName": "Thành phố Hồ Chí Minh",
+        "distId":"hcm",
+        "clr": "white"
+    },
+    "06": {
+        "distName": "Bình Dương",
+        "distId":"binhduong",
+        "clr": "black"
+    }
+}

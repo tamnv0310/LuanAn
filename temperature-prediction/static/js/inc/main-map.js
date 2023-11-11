@@ -43,8 +43,8 @@ function initMap() {
         satellite = L.tileLayer(mbUrl, { id: 'mapbox/satellite-v9', tileSize: 512, zoomOffset: -1, attribution: mbAttr });
 
     map = L.map('map', {
-        center: [10.753286, 106.662586],
-        zoom: 10,
+        center: [11.10165037285805, 106.76075056221242],
+        zoom: 9,
         layers: [grayscale],
     });
 
@@ -74,8 +74,8 @@ function initMap() {
     info.update = function (props) {
         debugger
         var dist_name = (props && props["name"]) ? item_list[props["name"]][2] : "";
-        this._div.innerHTML = '<h4>Tỉnh/Thành Phố</h4>' +
-            (props ? '<p><b>' + dist_name + '</b></p><p><b>' + props.product + '</b><br/>'
+        this._div.innerHTML = '<h4>Địa điểm</h4>' +
+            (props ? '<p><b>' + dist_name + '</b></p><p>'
                 +props.textType+ '<b><span class="circle color" style="background-color: ' + props.color + '"></span><span> ' + props.density + '</span></b> ' + props.unit + '</p><p style="text-align: right; margin-bottom: 0;"><i><small>' + props.date + '</small></i></p>'
                 : '');
     };
@@ -99,11 +99,11 @@ function initMap() {
 
 
     // var vietnam_define = null;
-    // $.getJSON("static/data/hcm-district/vietnam_define.json", function (data) {
+    // $.getJSON("static/data/province/vietnam_define.json", function (data) {
     //     vietnam_define = data;
     // });
     //
-    // $.getJSON("static/data/hcm-district/vietnam.json", function (data) {
+    // $.getJSON("static/data/province/vietnam.json", function (data) {
     //     var _province = data["features"];
     //     for (var i in _province) {
     //         var k = _province[i]["properties"]["slug"];
@@ -252,11 +252,11 @@ function initMap() {
     // });
 
 
-    $.getJSON("static/data/hcm-district/district_define.json", function (data) {
+    $.getJSON("static/data/province/province_define.json", function (data) {
         province_define = data;
     });
 
-    $.getJSON("static/data/hcm-district/district_geo.json", function (data) {
+    $.getJSON("static/data/province/province_geo.json", function (data) {
         var _d = data["features"];
         for (var i in _d) {
             var k = _d[i]["properties"]["AdminID"];
@@ -278,9 +278,9 @@ function initMap() {
                     "style": {
                         weight: 2.5,
                         dashArray: '3',
-                        color: "#a6a6a6",
+                        color: "#777777", //màu border
                         opacity: opacityDefault,
-                        fillColor: "#a6a6a6",
+                        fillColor: "#a6a6a6", //mặc định là màu xám
                         fillOpacity: fillOpacityDefault
                     },
                     "show_on_map": true

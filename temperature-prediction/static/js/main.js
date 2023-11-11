@@ -48,7 +48,7 @@ $(function () {
   triggerGetData();
   triggerPlay();
   initDateInput();
-  // initDateSwiper();
+  initDateSwiper();
 })
 
 function initSelectDistrict() {
@@ -122,6 +122,7 @@ function initDateSwiper() {
             dateSwiper.prependSlide(slides);
           }, 1500)
 
+          //bấm vô ngày hiện tại
           setTimeout(function () {
             $("a.date.current").trigger('click');
           }, 1500)
@@ -151,7 +152,7 @@ function getAvaiableDate() {
     dateRange.push({
       date: formatDateDDMMYYYY(_d),
       wkday: weekday[_d.getDay()],
-      class: (i == 1) ? "forecast" : "actual"
+      class: (i == 0) ? "forecast" : "actual" //dự báo và thực tế
     })
   }
 
@@ -199,52 +200,53 @@ function triggerGetData() {
   });
 }
 
+//tham số date, sản phẩm: temperture, có phải là dự báo không (ngày tương lai của hiện tại thì true)
 function getDataByDate(date, product, isForecast) {
-  var part_url = isForecast ? "get-product-forecast" : "get-product";
-  var part_url_date = date.split("-").reverse().join("-");
-  $.get(part_url + "/all-dist/" + product + "/" + part_url_date, {})
-    .done(function (data) {
-      console.log("Data on ", date, JSON.parse(data));
-      var res = JSON.parse(data);
-      var product_id = res["product_id"];
-      var max = product_list[product_id]['max'];
-      var query_date = res["query_date"];
+  //api lấy data....
+  //đây là data giả
+  let res = {
+    "product_id": "temperture",
+    "query_date": "2023-11-11",
+    "data": {
+      "vungtau": 10,
+      "dongnai": 20,
+      "binhphuoc": 15,
+      "tayninh": 32,
+      "hcm": 41,
+      "binhduong": 33,
+    }
+  }
 
-      var waitingMap = setInterval(function () {
-        if (geojson) {
-          //Update layers features
-          for (var i in provinceFeatures) {
-            var dist_id = provinceFeatures[i]["properties"]["name"];
-            var density_tmp = parseFloat(res["data"][dist_id]).toFixed(2);
-            //convert micromol/m2 to microg/m3
-            // if (product_id != "pm25") {
-            //   density_tmp = convertToMicrogramPSM(product_id, density_tmp)
-            // }
-            var density_val = Number(density_tmp).toLocaleString('vi-VN');
-            console.log("density_val: ", density_val)
-            provinceFeatures[i]["properties"]["textType"] = isForecast ? "<b>Dự báo: </b>" : "<b>Sentinel-5P: </b>";
-            provinceFeatures[i]["properties"]["density"] = density_val;
-            provinceFeatures[i]["properties"]["color"] = getColor(density_tmp, max, colorCodeRange);
-            provinceFeatures[i]["properties"]["product"] = product_list[product_id]["label"];
-            provinceFeatures[i]["properties"]["unit"] = product_list[product_id]["unit"];
-            provinceFeatures[i]["properties"]["date"] = weekday[new Date(query_date).getDay()] + ", " + formatDateDDMMYYYY(query_date);
-          }
+  console.log("Data on ", date, res);
 
-          geojson.setStyle(function (feature) {
-            var dist_id = feature["properties"]["name"];
-            var val = res["data"][dist_id];
-            return {
-              fillColor: getColor(val, max, colorCodeRange),
-              color: '#ffffff' /*Border color*/
-            }
-          })
-          clearInterval(waitingMap);
+  var max = 50; //50 độ C
+  var query_date = res["query_date"];
+
+  var waitingMap = setInterval(function () {
+    if (geojson) {
+      //Update layers features
+      for (var i in districtFeatures) {
+        var dist_id = districtFeatures[i]["properties"]["name"];
+        var density_tmp = parseFloat(res["data"][dist_id]).toFixed(2);
+        var density_val = Number(density_tmp).toLocaleString('vi-VN');
+        console.log("density_val: ", density_val)
+        districtFeatures[i]["properties"]["textType"] = isForecast ? "<b>Dự báo: </b>" : "<b>Trạm đo tên gì: </b>";
+        districtFeatures[i]["properties"]["density"] = density_val;
+        districtFeatures[i]["properties"]["color"] = getColor(density_tmp, max, colorCodeRange);
+        districtFeatures[i]["properties"]["date"] = weekday[new Date(query_date).getDay()] + ", " + formatDateDDMMYYYY(query_date);
+      }
+
+      geojson.setStyle(function (feature) {
+        var dist_id = feature["properties"]["name"];
+        var val = res["data"][dist_id];
+        return {
+          fillColor: getColor(val, max, colorCodeRange),
+          color: '#ffffff' /*Border color*/
         }
-      }, 250)
-
-
-
-    });
+      })
+      clearInterval(waitingMap);
+    }
+  }, 250)
 }
 
 function getColor(val, max, colorCodeRange) {
@@ -288,7 +290,8 @@ function setColorLegend(colorCodeRange) {
   for (var i = (colorCodeRange.length - 1); i >= 0; i--) {
     var _limit = (max / (colorCodeRange.length - 1)) * i;
     var _clr = colorCodeRange[i];
-    var element = '<li class="value" style="background-color: ' + _clr + '; color: ' + invertColor(_clr, true) + '";>' + nFormatter(_limit, 1) + '</li>';
+    var plusSymbol = (colorCodeRange.length - 1) === i ? '+' : '';
+    var element = '<li class="value" style="background-color: ' + _clr + '; color: ' + invertColor(_clr, true) + '";>' + nFormatter(_limit, 1) + plusSymbol + '</li>';
     $("#colorLegend ul").append(element)
   }
 }
@@ -403,21 +406,4 @@ function triggerPlay() {
 function formatDateYYYYMMDD(data) {
   var _d = data.split("-");
   return _d[2] + "-" + _d[1] + "-" + _d[0]
-}
-
-//convert umol/m2 => ug/m3
-function convertToMicrogramPSM(product_id, density) {
-  return density
-  // const coef = {
-  //   "no2": "46.0055",
-  //   "so2": "64.0640",
-  //   "hcho": "30.0260",
-  //   "o3": "47.9970",
-  //   "co": "28.0100",
-  // }
-  // var coef_product = parseFloat(coef[product_id]);
-  // console.log(product_id, density,coef_product)
-  // var microGramPerM2 = parseFloat(density) * coef_product;
-  // //micro gram/m3 =>
-  // return microGramPerM2/10000;
 }
