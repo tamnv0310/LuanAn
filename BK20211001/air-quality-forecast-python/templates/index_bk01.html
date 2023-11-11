@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Weather</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="static/css/index.css">
+</head>
+
+<body>
+    <div id="map"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <!-- HEADER -->
+                <div class="header">
+                    <!-- <div class="logo">DBCLKK</div> -->
+                    <form class="form-search">
+                        <div class="input-gr">
+                            <input type="text" class="form-control" placeholder="Tìm theo địa điểm...">
+                                <button class="btn btn-secondary" type="submit">Tìm</button>
+                        </div>
+                    </form>
+                    <!-- <div class="menu">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Menu
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Trang thống kê</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+
+                <!-- CONTROL ZONE -->
+                <div class="control">
+                    <div class="nav-wrapper">
+                        <div class="control-wrapper">
+                            <div class="control-date">
+                                <ul>
+                                    <li>
+                                        <a href="#TODO"><i class="fas fa-arrow-circle-left"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#TODO"><i class="fas fa-play-circle"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#TODO"><i class="fas fa-arrow-circle-right"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="control-mode">
+                                <select name="" id="">
+                                    <option value="">Khi Nitrogen Dioxide NO2</option>
+                                    <option value="">Khi NO</option>
+                                    <option value="">NO</option>
+                                    <option value="">NO2</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="color-range">
+                            <ul>
+                                <li class="unit">
+                                   µg/m³
+                                </li>
+                                <li class="value" style="background-color: #F19914;">
+                                    800
+                                </li>
+                                <li class="value" style="background-color: yellow;">
+                                    500
+                                </li>
+                                <li class="value" style="background-color: green;">
+                                    200
+                                </li>
+                                <li class="value" style="background-color: lightblue;">
+                                    100
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="nav-date">
+                        <ul id="navDate">
+                            <!-- <li>
+                                <a class="date" data-value="">
+                                    <h4>Thứ 2</h4>
+                                    <label>19-07-2021</label>
+                                </a>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <!-- <h2>footer</h2> -->
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript"
+        src="//maps.googleapis.com/maps/api/js?key=AIzaSyAvR9_B8ymX8YELstOmxx5pgP4LTY9maZw"></script>
+    <script type="text/javascript" src="static/js/main-dist.js"></script>
+</body>
+
+
+
+</html>

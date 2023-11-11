@@ -1,0 +1,122 @@
+{
+    "760": {
+        "distName": "Quận 1",
+        "distId":"q1",
+        "clr": "red"
+    },
+    "761": {
+        "distName": "Quận 12",
+        "distId":"q12",
+        "clr": "#0000cd"
+    },
+    "771": {
+        "distName": "Quận 10",
+        "distId":"q10",
+        "clr": "yellow"
+    },
+    "768": {
+        "distName": "Quận Phú Nhuận",
+        "distId":"q12",
+        "clr": "green"
+    },
+    "775": {
+        "distName": "Quận 6",
+        "distId":"q6",
+        "clr": "violet"
+    },
+    "765": {
+        "distName": "Quận Bình Thạnh",
+        "distId":"q12",
+        "clr": "lightblue"
+    },
+    "774": {
+        "distName": "Quận 5",
+        "distId":"q5",
+        "clr": "gray"
+    },
+    "762": {
+        "distName": "TP Thủ Đức",
+        "distId":"tptduc",
+        "clr": "pink"
+    },
+    "767": {
+        "distName": "Quận Tân Phú",
+        "distId":"qtphu",
+        "clr": "#f4a460"
+    },
+    "766": {
+        "distName": "Quận Tân Bình",
+        "distId":"qtbinh",
+        "clr": "#708090"
+    },
+    "770": {
+        "distName": "Quận 3",
+        "distId":"q12",
+        "clr": "#d2b48c"
+    },
+    "776": {
+        "distName": "Quận 8",
+        "distId":"q8",
+        "clr": "#9acd32"
+    },
+    "769": {
+        "distName": "Quận 2",
+        "distId":"q2",
+        "clr": "#ff6347"
+    },
+    "773": {
+        "distName": "Quận 4",
+        "distId":"q4",
+        "clr": "#dda0dd"
+    },
+    "764": {
+        "distName": "Quận Gò Vấp",
+        "distId":"q9",
+        "clr": "#ff4500"
+    },
+    "763": {
+        "distName": "Quận 9",
+        "distId":"q12",
+        "clr": "#66cdaa"
+    },
+    "772": {
+        "distName": "Quận 11",
+        "distId":"q11",
+        "clr": "#ffa07a"
+    },
+    "786": {
+        "distName": "Huyện Nhà Bè",
+        "distId":"hnbe",
+        "clr": "#ffa07a"
+    },
+    "783": {
+        "distName": "Huyện Củ Chi",
+        "distId":"hcchi",
+        "clr": "red"
+    },
+    "777": {
+        "distName": "Quận Bình Tân",
+        "distId":"qbtan",
+        "clr": "#b22222"
+    },
+    "784": {
+        "distName": "Huyện Hóc Môn",
+        "distId":"hhmon",
+        "clr": "#daa520"
+    },
+    "785": {
+        "distName": "Huyện Bình Chánh",
+        "distId":"hbchanh",
+        "clr": "#006400"
+    },
+    "778": {
+        "distName": "Quận 7",
+        "distId":"q7",
+        "clr": "#7b68ee"
+    },
+    "787": {
+        "distName": "Huyện Cần Giờ",
+        "distId":"hcgio",
+        "clr": "#808000"
+    }
+}

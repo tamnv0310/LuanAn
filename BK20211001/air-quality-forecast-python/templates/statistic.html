@@ -1,0 +1,341 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Trang chi tiết | Dự báo chất lượng không khí - TP Hồ Chí Minh</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="static/css/statistic.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="link">
+                    <a href="/"><i class="fas fa-caret-left mr-2"></i>Về trang chủ</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-7">
+                <h2 class="mb-3">Chất lượng không khí TP.HCM</h2>
+                <form>
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <label for="location">Chọn khu vực</label>
+                                    <select name="selectDistrict" class="form-control" id="selectDistrict">
+                                    </select>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label for="location">Chọn loại chất</label>
+                                    <select name="selectProduct" class="form-control" id="selectProduct">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="form-group">
+                                <label for="fromdate">Chọn khoảng thời gian:</label>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <input type="text" class="form-control" id="fromdate">
+                                    <span class="mx-3">đến</span>
+                                    <input type="text" class="form-control" id="todate">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 text-right pt-2">
+                            <button id="retriveData" type="button" class="btn btn-success mr-2">Tìm dữ liệu</button>
+                            <input type="reset" value="Nhập lại" class="btn btn-secondary"></input>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- CHART -->
+                <div class="py-3">
+                    <div class="chart-wrapper">
+                        <div class="chart-content">
+                            <canvas id="my_chart" width="100%" height="39"></canvas>
+                        </div>
+                    </div>
+                    <!-- <canvas id="chartno" width="100%" height="38"></canvas>
+                    <canvas id="chartco" width="100%" height="38"></canvas>
+                    <canvas id="chartch4" width="100%" height="38"></canvas>
+                    <canvas id="chartso2" width="100%" height="38"></canvas> -->
+                </div>
+            </div>
+
+            <!-- MAP -->
+            <div class="col-lg-5 d-none d-md-block">
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <!-- <h2>footer</h2> -->
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.min.js"></script>
+    <script type="text/javascript"
+        src="//maps.googleapis.com/maps/api/js?key=AIzaSyAvR9_B8ymX8YELstOmxx5pgP4LTY9maZw"></script>
+    <script type="text/javascript" src="static/js/statistic-dist.js"></script>
+
+    <script>
+        // var ctx = document.getElementById('chartno2').getContext('2d');
+        // var ctx2 = document.getElementById('chartno').getContext('2d');
+        // var ctx3 = document.getElementById('chartco').getContext('2d');
+        // var ctx4 = document.getElementById('chartch4').getContext('2d');
+        // var ctx5 = document.getElementById('chartso2').getContext('2d');
+        // NO2
+        // var chartno2 = new Chart(ctx, {
+        //     type: 'bar',
+        //     data: {
+        //         labels: ['11', '12', '13', '14', '14', '13', '12', '13', '14', '14', '13', '13', '12', '13', '14', '14', '13'],
+        //         datasets: [{
+        //             label: 'Value:',
+        //             data: [12, 19, 3, 5, 2, 3, 5, 2, 3, 5, 2, 19, 3, 5, 2, 19, 3],
+        //             backgroundColor: [
+        //                 'rgba(255, 99, 132, 0.2)',
+        //                 'rgba(54, 162, 235, 0.2)',
+        //                 'rgba(255, 206, 86, 0.2)',
+        //                 'rgba(75, 192, 192, 0.2)',
+        //                 'rgba(153, 102, 255, 0.2)',
+        //                 'rgba(255, 159, 64, 0.2)'
+        //             ],
+        //             borderColor: [
+        //                 'rgba(255, 99, 132, 1)',
+        //                 'rgba(54, 162, 235, 1)',
+        //                 'rgba(255, 206, 86, 1)',
+        //                 'rgba(75, 192, 192, 1)',
+        //                 'rgba(153, 102, 255, 1)',
+        //                 'rgba(255, 159, 64, 1)'
+        //             ],
+        //             borderWidth: 1
+        //         }]
+        //     },
+        //     options: {
+        //         scales: {
+        //             y: {
+        //                 beginAtZero: true
+        //             }
+        //         },
+        //         responsive: true,
+        //         plugins: {
+        //             legend: {
+        //                 display: false
+        //             },
+        //             title: {
+        //                 display: true,
+        //                 text: 'NO2',
+        //                 position: 'top'
+        //             }
+        //         }
+        //     }
+        // });
+
+        // // NO
+        // var chartno = new Chart(ctx2, {
+        //     type: 'bar',
+        //     data: {
+        //         labels: ['11', '12', '13', '14', '14', '13', '12', '13', '14', '14', '13', '13', '12', '13', '14', '14', '13'],
+        //         datasets: [{
+        //             label: 'Value:',
+        //             data: [12, 19, 3, 5, 2, 19, 3, 5, 2, 19, 3, 5, 2, 3, 5, 2, 3],
+        //             backgroundColor: [
+        //                 'rgba(255, 99, 132, 0.2)',
+        //                 'rgba(54, 162, 235, 0.2)',
+        //                 'rgba(255, 206, 86, 0.2)',
+        //                 'rgba(75, 192, 192, 0.2)',
+        //                 'rgba(153, 102, 255, 0.2)',
+        //                 'rgba(255, 159, 64, 0.2)'
+        //             ],
+        //             borderColor: [
+        //                 'rgba(255, 99, 132, 1)',
+        //                 'rgba(54, 162, 235, 1)',
+        //                 'rgba(255, 206, 86, 1)',
+        //                 'rgba(75, 192, 192, 1)',
+        //                 'rgba(153, 102, 255, 1)',
+        //                 'rgba(255, 159, 64, 1)'
+        //             ],
+        //             borderWidth: 1
+        //         }]
+        //     },
+        //     options: {
+        //         scales: {
+        //             y: {
+        //                 beginAtZero: true
+        //             }
+        //         },
+        //         responsive: true,
+        //         plugins: {
+        //             legend: {
+        //                 display: false
+        //             },
+        //             title: {
+        //                 display: true,
+        //                 text: 'NO',
+        //                 position: 'top'
+        //             }
+        //         }
+        //     }
+        // });
+
+        // // CO
+        // var chartco = new Chart(ctx3, {
+        //     type: 'bar',
+        //     data: {
+        //         labels: ['11', '12', '13', '14', '14', '13', '12', '13', '14', '14', '13', '13', '12', '13', '14', '14', '13'],
+        //         datasets: [{
+        //             label: 'Value:',
+        //             data: [11, 14, 3, 5, 2, 19, 3, 2, 3, 11, 3, 4, 2, 3, 5, 2, 2],
+        //             backgroundColor: [
+        //                 'rgba(255, 99, 132, 0.2)',
+        //                 'rgba(54, 162, 235, 0.2)',
+        //                 'rgba(255, 206, 86, 0.2)',
+        //                 'rgba(75, 192, 192, 0.2)',
+        //                 'rgba(153, 102, 255, 0.2)',
+        //                 'rgba(255, 159, 64, 0.2)'
+        //             ],
+        //             borderColor: [
+        //                 'rgba(255, 99, 132, 1)',
+        //                 'rgba(54, 162, 235, 1)',
+        //                 'rgba(255, 206, 86, 1)',
+        //                 'rgba(75, 192, 192, 1)',
+        //                 'rgba(153, 102, 255, 1)',
+        //                 'rgba(255, 159, 64, 1)'
+        //             ],
+        //             borderWidth: 1
+        //         }]
+        //     },
+        //     options: {
+        //         scales: {
+        //             y: {
+        //                 beginAtZero: true
+        //             }
+        //         },
+        //         responsive: true,
+        //         plugins: {
+        //             legend: {
+        //                 display: false
+        //             },
+        //             title: {
+        //                 display: true,
+        //                 text: 'CO',
+        //                 position: 'top'
+        //             }
+        //         }
+        //     }
+        // });
+
+        // // CH4
+        // var chartch4 = new Chart(ctx4, {
+        //     type: 'bar',
+        //     data: {
+        //         labels: ['11', '12', '13', '14', '14', '13', '12', '13', '14', '14', '13', '13', '12', '13', '14', '14', '13'],
+        //         datasets: [{
+        //             label: 'Value:',
+        //             data: [5, 2, 3, 5, 2, 3, 12, 19, 3, 5, 2, 19, 3, 5, 2, 19, 3],
+        //             backgroundColor: [
+        //                 'rgba(255, 99, 132, 0.2)',
+        //                 'rgba(54, 162, 235, 0.2)',
+        //                 'rgba(255, 206, 86, 0.2)',
+        //                 'rgba(75, 192, 192, 0.2)',
+        //                 'rgba(153, 102, 255, 0.2)',
+        //                 'rgba(255, 159, 64, 0.2)'
+        //             ],
+        //             borderColor: [
+        //                 'rgba(255, 99, 132, 1)',
+        //                 'rgba(54, 162, 235, 1)',
+        //                 'rgba(255, 206, 86, 1)',
+        //                 'rgba(75, 192, 192, 1)',
+        //                 'rgba(153, 102, 255, 1)',
+        //                 'rgba(255, 159, 64, 1)'
+        //             ],
+        //             borderWidth: 1
+        //         }]
+        //     },
+        //     options: {
+        //         scales: {
+        //             y: {
+        //                 beginAtZero: true
+        //             }
+        //         },
+        //         responsive: true,
+        //         plugins: {
+        //             legend: {
+        //                 display: false
+        //             },
+        //             title: {
+        //                 display: true,
+        //                 text: 'CH4',
+        //                 position: 'top'
+        //             }
+        //         }
+        //     }
+        // });
+
+        // // SO2
+        // var chartno = new Chart(ctx5, {
+        //     type: 'bar',
+        //     data: {
+        //         labels: ['11', '12', '13', '14', '14', '13', '12', '13', '14', '14', '13', '13', '12', '13', '14', '14', '13'],
+        //         datasets: [{
+        //             label: 'Value:',
+        //             data: [12, 19, 5, 2, 3, 3, 5, 2, 19, 3, 5, 2, 19, 3, 5, 2, 3],
+        //             backgroundColor: [
+        //                 'rgba(255, 99, 132, 0.2)',
+        //                 'rgba(54, 162, 235, 0.2)',
+        //                 'rgba(255, 206, 86, 0.2)',
+        //                 'rgba(75, 192, 192, 0.2)',
+        //                 'rgba(153, 102, 255, 0.2)',
+        //                 'rgba(255, 159, 64, 0.2)'
+        //             ],
+        //             borderColor: [
+        //                 'rgba(255, 99, 132, 1)',
+        //                 'rgba(54, 162, 235, 1)',
+        //                 'rgba(255, 206, 86, 1)',
+        //                 'rgba(75, 192, 192, 1)',
+        //                 'rgba(153, 102, 255, 1)',
+        //                 'rgba(255, 159, 64, 1)'
+        //             ],
+        //             borderWidth: 1
+        //         }]
+        //     },
+        //     options: {
+        //         scales: {
+        //             y: {
+        //                 beginAtZero: true
+        //             }
+        //         },
+        //         responsive: true,
+        //         plugins: {
+        //             legend: {
+        //                 display: false
+        //             },
+        //             title: {
+        //                 display: true,
+        //                 text: 'SO2',
+        //                 position: 'top'
+        //             }
+        //         }
+        //     }
+        // });
+    </script>
+</body>
+
+
+
+</html>

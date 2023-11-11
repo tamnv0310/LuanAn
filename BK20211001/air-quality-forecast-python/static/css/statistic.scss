@@ -1,0 +1,21 @@
+@import "inc/global";
+
+#map{
+    width: 100%;
+    height: 40vh;
+    min-height: 800px;
+    @media screen and (max-width: 991px) {
+        margin-left: -15px;
+        margin-right: -15px;
+        width: calc(100% + 30px);
+        min-height: 450px;
+    }
+}
+
+.chart-wrapper{
+    overflow-x: auto;
+    .chart-content{
+        width: 100%;
+        min-width: 600px;
+    }
+}
