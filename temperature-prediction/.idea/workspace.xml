@@ -4,7 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7372411f-8210-4a1e-8d11-2ee93a0cc9a5" name="Changes" comment="init" />
+    <list default="true" id="7372411f-8210-4a1e-8d11-2ee93a0cc9a5" name="Changes" comment="init">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/inc/_global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/inc/_global.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/index-dist.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/index-dist.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/index.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/index.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/index_bk.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/index_bk.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/statistic.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/statistic.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/statistic.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/statistic.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/statistic.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/data/province/province_geo.json" beforeDir="false" afterPath="$PROJECT_DIR$/static/data/province/province_geo.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/inc/main-map.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/inc/main-map.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/main-dist.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main-dist.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/main-dist.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main-dist.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/statistic-dist.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/statistic-dist.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/statistic.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/statistic.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/prepros.config" beforeDir="false" afterPath="$PROJECT_DIR$/static/prepros.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/statistic.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/statistic.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,20 +42,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/ThresisSource/temperature-prediction-main/temperature-prediction",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/ThresisSource/temperature-prediction-main/temperature-prediction&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Flask server.temperature-prediction">
     <configuration name="temperature-prediction" type="PythonConfigurationType" factoryName="Python">
       <module name="temperature-prediction" />
@@ -65,7 +86,7 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -89,6 +110,10 @@
       <workItem from="1699578341573" duration="42000" />
       <workItem from="1699626244461" duration="118000" />
       <workItem from="1699632390554" duration="18241000" />
+      <workItem from="1699714317995" duration="30704000" />
+      <workItem from="1700887699607" duration="673000" />
+      <workItem from="1700963676281" duration="861000" />
+      <workItem from="1700986971347" duration="6757000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -114,19 +139,22 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/static/js/inc/main-map.js</url>
           <line>259</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/static/js/inc/main-map.js</url>
           <line>73</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/static/js/statistic.js</url>
+          <line>414</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/temperature_prediction$temperature_prediction.coverage" NAME="temperature-prediction Coverage Results" MODIFIED="1699691260046" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/temperature_prediction$temperature_prediction.coverage" NAME="temperature-prediction Coverage Results" MODIFIED="1699832272531" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

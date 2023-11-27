@@ -3,7 +3,8 @@
 
 var district_data = [];
 var future_count = 5;
-var dataStartDate = "10/03/2023";
+var dataStartDate = "01/10/1981";
+var dumpDate = "10/03/2023";
 const weekday = new Array(7);
 weekday[0] = "Chủ nhật";
 weekday[1] = "Thứ hai";
@@ -22,7 +23,7 @@ var playStatus = 0;
 //colorCodeRange: low to high
 // const colorCodeRange = ['#3776bf', '#a7c6ed', '#40bdb1', '#e0da69', '#e1c63b', '#df7a4c', '#d14673', '#aa335c', '#631417', '#46080b', '#2b0002']
 // const colorCodeRange = ['#3da570', '#44c359', '#55e93a', '#e0da69', '#e1c63b', '#df7a4c', '#d14673', '#aa335c', '#631417', '#46080b', '#2b0002']
-const colorCodeRange = ['#1d10ff', '#3f66ff', '#b1d2f4', '#5dd5d1', '#258200', '#9fcf00', '#f9cf00', '#f66401', '#f70000'];
+const colorCodeRange = ['#1d10ff', '#3f66ff', '#b1d2f4', '#5dd5d1', '#258200', '#9fcf00', '#f9cf00', '#f66401', '#f70000','#660000'];
 
 
 const product_list = {
@@ -32,7 +33,7 @@ const product_list = {
     unit: "°C",
     unitConvert: "°C",
     threshold: 20,
-    max: 40
+    max: 45
   },
 }
 
@@ -89,7 +90,7 @@ function initDateInput() {
     $slideElement.click();
   });;
 
-  $("#date").datepicker("setDate", new Date());
+  $("#date").datepicker("setDate", new Date(dumpDate));
   var maxDate = new Date();
   maxDate.setDate(maxDate.getDate() + future_count);
   $('#date').datepicker('option', 'minDate', new Date(dataStartDate));
@@ -110,7 +111,7 @@ function initDateSwiper() {
       },
       afterInit: function () {
         console.log('after initialized', dateSwiper);
-        var dateRange = getAvaiableDate();
+        var dateRange = getAvailableDate();
         console.log("Date range", dateRange);
         if (dateRange.length) {
           var slides = []
@@ -136,9 +137,9 @@ function initDateSwiper() {
 
 }
 
-function getAvaiableDate() {
-  var today = new Date()
-  var startDate = new Date(dataStartDate);
+function getAvailableDate() {
+  var today = new Date(dumpDate)
+  var startDate = new Date(2022,10,10);
   const diffTime = Math.abs(today - startDate);
   const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) - 1;
   var dateRange = [];
@@ -146,7 +147,7 @@ function getAvaiableDate() {
 
   //past days
   for (var i = past_count + 1; i > 0; i--) {
-    const _d = new Date();
+    const _d = new Date(dumpDate);
     _d.setDate(_d.getDate() - i);
 
     dateRange.push({
@@ -158,7 +159,7 @@ function getAvaiableDate() {
 
   //future days
   for (var i = 0; i < future_count + 1; i++) {
-    const _d = new Date();
+    const _d = new Date(dumpDate);
     _d.setDate(_d.getDate() + i);
 
     dateRange.push({
@@ -200,20 +201,20 @@ function triggerGetData() {
   });
 }
 
-//tham số date, sản phẩm: temperture, có phải là dự báo không (ngày tương lai của hiện tại thì true)
+//tham số date, sản phẩm: temperature, có phải là dự báo không (ngày tương lai của hiện tại thì true)
 function getDataByDate(date, product, isForecast) {
   //api lấy data....
   //đây là data giả
   let res = {
-    "product_id": "temperture",
-    "query_date": "2023-11-11",
+    "product_id": "temperature",
+    "query_date": "2023-11-12",
     "data": {
-      "vungtau": 10,
-      "dongnai": 20,
-      "binhphuoc": 15,
+      "vungtau": 29,
+      "dongnai": 31,
+      "binhphuoc": 32,
       "tayninh": 32,
-      "hcm": 41,
-      "binhduong": 33,
+      "hcm": 32,
+      "binhduong": 32,
     }
   }
 
@@ -230,7 +231,7 @@ function getDataByDate(date, product, isForecast) {
         var density_tmp = parseFloat(res["data"][dist_id]).toFixed(2);
         var density_val = Number(density_tmp).toLocaleString('vi-VN');
         console.log("density_val: ", density_val)
-        districtFeatures[i]["properties"]["textType"] = isForecast ? "<b>Dự báo: </b>" : "<b>Trạm đo tên gì: </b>";
+        districtFeatures[i]["properties"]["textType"] = isForecast ? "<b>Dự báo: </b>" : "<b>POWER NASA: </b>";
         districtFeatures[i]["properties"]["density"] = density_val;
         districtFeatures[i]["properties"]["color"] = getColor(density_tmp, max, colorCodeRange);
         districtFeatures[i]["properties"]["date"] = weekday[new Date(query_date).getDay()] + ", " + formatDateDDMMYYYY(query_date);

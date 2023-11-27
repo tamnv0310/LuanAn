@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="static/lib/fontawesome-free-5.15.4-web/css/all.min.css">
     <!-- CSS Statistic -->
     <link rel="stylesheet" href="static/css/statistic.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-ZpB/BMRS4fVtM2Lw/5g4v2UJXfYOQ1LQH5nK4bXo7b6P1i2QZmc9tBMf1c7+MvVqtg0eV3wSW7dKt1B0R6m5SA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -26,36 +27,29 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <h2 class="mb-3">Chất lượng không khí TP.HCM</h2>
+                    <h2 class="mb-3 title">Thống kê của nhiệt độ không khí của vùng Đông Nam Bộ</h2>
                     <form>
                         <div class="row">
-                            <div class="col-xl-6">
-                                <div class="row">
-                                    <div class="form-group col-sm-6">
-                                        <label for="location">Chọn khu vực:</label>
-                                        <select name="selectDistrict" class="form-control" id="selectDistrict">
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-sm-6">
-                                        <label for="location">Chọn loại chất:</label>
-                                        <select name="selectProduct" class="form-control" id="selectProduct">
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
+
                             <div class="col-xl-6">
                                 <div class="form-group">
-                                    <label for="fromdate">Chọn khoảng thời gian:</label>
                                     <div class="d-flex justify-content-between align-items-center">
+                                        <span class="mx-3">Từ</span>
                                         <input type="text" class="form-control" id="fromdate">
                                         <span class="mx-3">đến</span>
                                         <input type="text" class="form-control" id="todate">
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 text-right pt-2">
-                                <button id="retriveData" type="button" class="btn btn-success mr-2">Tìm dữ liệu</button>
-                                <input type="reset" value="Nhập lại" class="btn btn-secondary"></input>
+                            <div class="col-xl-4">
+                                 <select name="selectDistrict" class="form-control" id="selectDistrict">
+                                        </select>
+                            </div>
+                            <div class="col-12 pt-2">
+                                <button id="retriveData" type="button" class="btn mr-2">
+  <i class="fas fa-search"></i> Tìm kiếm
+</button>
+                                <input type="reset" value="Xuất file csv" class="btn btn-export"></input>
                             </div>
                         </div>
                     </form>
@@ -83,19 +77,10 @@
 
     <!-- FOOTER -->
     <footer>
-        <div class="container pt-4">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h5>Hệ thống dự báo chất lượng không khí đô thị</h5>
-                    <p><i>Luận văn thạc sĩ năm 2021, Trường Đại Học Công nghệ thông tin - ĐHQG TP.HCM. Nội dung chính
-                            gồm phân tích và dự báo Chất lượng không khí tại TP.HCM</i></p>
-                </div>
-                <div class="col-lg-6">
-                    <h5>Tác giả</h5>
-                    <p><i>Thực hiện: Nguyễn Thành Phong - Mã HV: CH1902014<br>Hướng dẫn: TS. Dương Thị Thúy Nga - Đại
+        <div class="container pt-4" style="text-align: center;">
+           <h5>Hệ thống dự báo nhiệt độ không khí</h5>
+                    <p><i>Thực hiện: Nguyễn Văn Tâm - Mã HV: CH1902018<br>Hướng dẫn: TS. Dương Thị Thúy Nga - Đại
                             học Tài nguyên và Môi trường TP.HCM</i></p>
-                </div>
-            </div>
         </div>
     </footer>
     <!-- jQquery -->

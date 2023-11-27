@@ -76,13 +76,18 @@ function initChart() {
     options: {
       scales: {
         y: {
-          suggestedMax: 250,
+          suggestedMax: 50,
           suggestedMin: 0,
           beginAtZero: true
         }
       },
       responsive: true,
       plugins: {
+        export: {
+      // Tùy chọn của plugin xuất khẩu
+      enabled: true,
+      // Các tùy chọn khác của plugin xuất khẩu
+    }
       }
     }
   });
@@ -222,6 +227,24 @@ function JSONToCSVConvertor(JSONData, ReportTitle, ShowLabel) {
   document.body.removeChild(link);
 }
 
+function LoadArea() {
+  var data = [
+  { value: 'hcm', text: 'Thành phố Hồ Chí Minh' },
+  { value: 'binhduong', text: 'Bình Dương' },
+  { value: 'bariavungtau', text: 'Bà Rịa - Vũng Tàu' },
+  { value: 'dongnai', text: 'Đồng Nai' },
+  { value: 'tayninh', text: 'Tây Ninh' },
+  { value: 'binhphuoc', text: 'Bình Phước' },
+  { value: 'binhthuan', text: 'Bình Thuận' }
+];
+  for (var i in data) {
+        var o = new Option(data[i]['text'], data[i]['value']);
+        /// jquerify the DOM object 'o' so we can use the html method
+        $(o).html(data[i]['text'],);
+        $("#selectDistrict").append(o);
+      }
+}
+
 $(function () {
   //init Date picker
   $('#fromdate, #todate').datepicker({
@@ -243,151 +266,184 @@ $(function () {
   }
 
   //get 24 district info, init select district
-  $.get("/get-district-all", {})
-    .done(function (data) {
-      district_data = JSON.parse(data)
-      for (var i in district_data) {
-        var o = new Option(district_data[i]['dist_name'], district_data[i]['_id']);
-        /// jquerify the DOM object 'o' so we can use the html method
-        $(o).html(district_data[i]['dist_name'],);
-        $("#selectDistrict").append(o);
-      }
-    });
-
+  // $.get("/get-district-all", {})
+  //   .done(function (data) {
+  //     district_data = JSON.parse(data)
+  //     for (var i in district_data) {
+  //       var o = new Option(district_data[i]['dist_name'], district_data[i]['_id']);
+  //       /// jquerify the DOM object 'o' so we can use the html method
+  //       $(o).html(district_data[i]['dist_name'],);
+  //       $("#selectDistrict").append(o);
+  //     }
+  //   });
+  LoadArea()
   //init chart
   initChart();
 
   //retrive data
   $("#retriveData").click(function () {
-    var dist_id = $("#selectDistrict").find(":selected").val();
-    var product_id = $("#selectProduct").find(":selected").val();
-    var from_date = formatDateYYYYMMDD($("#fromdate").val()); 
+    // var dist_id = $("#selectDistrict").find(":selected").val();
+    // var product_id = $("#selectProduct").find(":selected").val();
+    var from_date = formatDateYYYYMMDD($("#fromdate").val());
     var to_date = formatDateYYYYMMDD($("#todate").val());
 
-    if (!dist_id || !from_date || !to_date || !product_id) {
-      alert("Vui lòng nhập đầy đủ dữ liệu cần truy vấn.");
-      return;
-    }
+    // if (!dist_id || !from_date || !to_date || !product_id) {
+    //   alert("Vui lòng nhập đầy đủ dữ liệu cần truy vấn.");
+    //   return;
+    // }
     if (from_date > to_date) {
       alert("Ngày bắt đầu phải bé hơn ngày kết thúc.");
       return;
     }
-    $.get("/get-product/" + product_id + "/" + dist_id + "/" + from_date + "/" + to_date + "", {})
-      .done(function (data) {
-        res = JSON.parse(data);
-        product_dist_data = res;
-        console.log("res data: ", res)
-        var _label = [];
-        var _data = [];
-        var _data_pred = [];
-        my_chart.data.datasets = [];
+    console.log(from_date)
+    var _label = [];
+    var _data = [];
+    var _data_pred = [];
+    my_chart.data.datasets = [];
+    var currentDate = new Date(from_date);
+    var endDate = new Date(to_date);
+    while (currentDate <= endDate) {
+      var formattedDate = currentDate.toLocaleDateString('en-US', { day: 'numeric', month: 'numeric', year: 'numeric' });
+      var temperature = Math.random() * 4 + 28; // Giá trị ngẫu nhiên trong khoảng từ 28 đến 31
+      var temperaturePred = Math.random() * 3 + 28; // Giá trị ngẫu nhiên trong khoảng từ 28 đến 31
 
-        if (!res['data'] || !res['data'].length) {
-          alert("Dữ liệu không tồn tại hoặc đang cập nhật...");
-          $(".btn-export").fadeOut();
-        } else {
-          $(".btn-export").fadeIn();
-        }
+      _label.push(formattedDate)
+      // if (currentDate.getDate() === 3) {
+      //     _data.push(temperature.toFixed(0));
+      //     _data_pred.push(temperature.toFixed(0));
+      // } else {
+      //     _data.push(temperature.toFixed(0));
+      //     if (currentDate.getDate() > 3) {
+      //       _data_pred.push(temperaturePred.toFixed(0));
+      //     }
+      // }
 
-        if (res['data'] && res['data'].length) {
-          console.log("res data: ", res['data']);
-          var resData = res['data'];
-          for (var i in resData) {
-            console.log("real value", resData[i])
-            _label.push(resData[i]['date']);
-            _data.push(resData[i]['val']);
-          }
-          my_chart.data.datasets.push({
+      currentDate.setDate(currentDate.getDate() + 1);
+    }
+
+    var jsonData = JSON.stringify(_data);
+    var jsonData2 = JSON.stringify(_data_pred);
+
+    console.log('_data', jsonData)
+    console.log('_data_pred', jsonData2)
+
+    _data = [
+  24,
+  25,
+  24,
+  24,
+  23,
+  23,
+  23,
+  23,
+  24,
+  24,
+  25,
+  25,
+  26,
+  26,
+  26,
+  25,
+  25,
+  25,
+  24,
+  24,
+  26,
+  27,
+  27,
+  26,
+  24,
+  25,
+  26,
+  24,
+  23,
+  23,
+  25
+];
+    // _data_pred = [NaN,"31","30","29","31","29","28","29","30"]
+    my_chart.data.datasets.push({
             label: 'Giá trị thực tế',
             data: _data,
             fill: true,
-            borderColor: 'rgba(40, 167, 69, 0.7',
-            backgroundColor: 'rgba(40, 167, 69, 0.5',
+            borderColor: '#ff4d4d',
+            backgroundColor: 'rgba(0, 0, 0, 0)',
             tension: 0.35, /*bo góc*/
             borderWidth: 2,
             pointBorderWidth: 1.23,
             pointRadius: 1.5
           })
-        }
 
-        if (res['data_pred'] && res['data_pred'].length) {
-          console.log("res data predict: ", res['data_pred']);
-          var threshold = product_list[product_id]['threshold'];
-          var resData_pred = res['data_pred'];
-          for (var i in res['data']) {
-            if (parseInt(i) == res['data'].length - 1) {
-              _data_pred.push(res['data'][i]['val']);
-            } else {
-              _data_pred.push(NaN);
-            }
-          }
-          for (var i in resData_pred) {
-            console.log("predict", resData_pred[i])
-            _label.push(resData_pred[i]['date']);
-            var val_pred = (resData_pred[i]['val_pred'] < threshold ? 0 : resData_pred[i]['val_pred']);
-            _data_pred.push(val_pred);
-          }
-          my_chart.data.datasets.push({
+    my_chart.data.datasets.push({
             label: 'Giá trị dự báo',
             data: _data_pred,
             fill: true,
-            borderColor: 'rgba(20, 159, 255, 0.8)',
-            backgroundColor: 'rgba(20, 159, 255, 0.6)',
+            borderColor: '#95adbe',
+            backgroundColor: 'rgba(0, 0, 0, 0)',
             tension: 0.35, /*bo góc*/
             borderWidth: 2,
             pointBorderWidth: 1.23,
             pointRadius: 1.5
           })
-          console.log(_data_pred)
-        }
 
-        my_chart.data.labels = _label;
+    my_chart.data.labels = _label;
 
-        my_chart.options = {
-          plugins: {
-            legend: {
-              position: 'top',
-            },
-            title: {
-              display: true,
-              text: 'Giá trị nồng độ ' + product_list[product_id]['label'] + ' (' + product_list[product_id]['unit'] + ')',
-              position: 'top',
-              font: {
-                size: 15
-              },
-              padding: {
-                top: 10,
-                bottom: 12
-              }
-            },
-            tooltip: {
-              titleFont: {
-                size: 14,
-                lineHeight: 1.5
-              },
-              bodyFont: {
-                size: 13.2,
-                lineHeight: 1.4
-              },
-              padding: 10,
-              caretPadding: 5,
-              callbacks: {
-                beforeTitle: function (tooltipItem) {
-                  return product_list[product_id]['label']
-                },
-                title: function (tooltipItem) {
-                  return "Ngày: " + tooltipItem[0]['label']
-                },
-                label: function (tooltipItem) {
-                  return " " + tooltipItem.dataset.label + ": " + tooltipItem.formattedValue.toLocaleString('vi-VN') + " µmol/㎡";
-                },
-              }
-            }
+    my_chart.options = {
+      scales: {
+        yAxes: [{
+          ticks: {
+            suggestedMin: 0,
+            suggestedMax: 50
           }
-        };
+        }]
+      },
+      plugins: {
+        legend: {
+          position: 'top',
+        },
+        title: {
+          display: true,
+          text: 'Nhiệt độ không khí tầm 2 mét',
+          position: 'top',
+          font: {
+            size: 15
+          },
+          padding: {
+            top: 10,
+            bottom: 12
+          }
+        },
+        tooltip: {
+          titleFont: {
+            size: 14,
+            lineHeight: 1.5
+          },
+          bodyFont: {
+            size: 13.2,
+            lineHeight: 1.4
+          },
+          padding: 10,
+          caretPadding: 5,
+          callbacks: {
+            beforeTitle: function (tooltipItem) {
+              return 'Nhiệt độ'
+            },
+            title: function (tooltipItem) {
+              return "Ngày: " + tooltipItem[0]['label']
+            },
+            label: function (tooltipItem) {
+              return " " + tooltipItem.dataset.label + ": " + tooltipItem.formattedValue.toLocaleString('vi-VN') + " °C";
+            },
+          }
+        },
+        export: {
+          // Tùy chọn của plugin xuất khẩu
+          enabled: true,
+        }
+      }
+    };
 
-        my_chart.update();
-      });
+    my_chart.update();
+
   })
 
   //triggerDownloadChartImg

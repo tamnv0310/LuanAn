@@ -2,11 +2,11 @@
 item_list = {
     /*lat long: center distric to display icon*/
     "hcm": [10.7759, 106.7013, "Thành phố Hồ Chí Minh", "TP.HCM"],
-    "binhduong": [11.3254, 106.4770, "Tỉnh Bình Dương", "Bình Dương"],
-    "binhphuoc": [11.5473, 106.8832, "Tỉnh Bình Phước", "Bình Phước"],
+    "binhduong": [11.1712, 106.6327, "Tỉnh Bình Dương", "Bình Dương"],
+    "binhphuoc": [11.7494, 106.9158, "Tỉnh Bình Phước", "Bình Phước"],
     "dongnai": [11.0682, 107.1678, "Tỉnh Đồng Nai", "Đồng Nai"],
     "tayninh": [11.3352, 106.1099, "Tỉnh Tây Ninh", "Tây Ninh"],
-    "vungtau": [10.5080, 107.1975, "Tỉnh Bà Rịa - Vũng Tàu", "Bà Rịa - Vũng Tàu"],
+    "vungtau": [10.5111, 107.2563, "Tỉnh Bà Rịa - Vũng Tàu", "Bà Rịa - Vũng Tàu"],
 }
 
 var province_define = null;
@@ -76,7 +76,7 @@ function initMap() {
         var dist_name = (props && props["name"]) ? item_list[props["name"]][2] : "";
         this._div.innerHTML = '<h4>Địa điểm</h4>' +
             (props ? '<p><b>' + dist_name + '</b></p><p>'
-                +props.textType+ '<b><span class="circle color" style="background-color: ' + props.color + '"></span><span> ' + props.density + '</span></b> ' + props.unit + '</p><p style="text-align: right; margin-bottom: 0;"><i><small>' + props.date + '</small></i></p>'
+                +props.textType+ '<b><span class="circle color" style="background-color: ' + props.color + '"></span><span> ' + props.density + '</span></b> ' + props.unit + '</p><p style="text-align: right; margin-bottom: 0;"><i><small>' + 'Thứ hai, 2/10/2023' + '</small></i></p>'
                 : '');
     };
 

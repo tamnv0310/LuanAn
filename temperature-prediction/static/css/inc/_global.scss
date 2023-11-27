@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400;1,500&display=swap');
 
-$theme-value: rgba(48, 25, 52, 65%);
+$theme-value: #331800;
 $color-dark-blue: rgb(48, 25, 52);
 $color-text: #1A002F;
 $color-yellow: #FFE895;
@@ -104,17 +104,17 @@ select.form-control{
     height: 0;
     .circle{
         display: inline-block;
-        background-color: transparent;
+        background-color: #331800;
         width: 12px;
         height: 12px;
         margin: 0 1px 0 2px;
         border-radius: 50%;
     }
-    @media screen and(max-width: 767px){
+    @media screen and (max-width: 767px){
         display: none;
     }
     @media screen and (min-width: 768px) {
-        min-height: 172px;
+        min-height: 150px;
         &.show{
             opacity: 1;
             height: auto;

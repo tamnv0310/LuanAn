@@ -13,7 +13,8 @@
     <!-- Font Awesome Icon -->
     <link rel="stylesheet" href="static/lib/fontawesome-free-5.15.4-web/css/all.min.css">
     <!-- Swiper -->
-    <link rel="stylesheet" href="static/css/lib/swiper-bundle.min.css" />
+{#    <link rel="stylesheet" href="static/css/lib/swiper-bundle.min.css" />#}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.4/swiper-bundle.min.css" />
     <!-- CSS Index -->
     <link rel="stylesheet" href="static/css/index.css">
 </head>
@@ -26,15 +27,15 @@
                 <!-- HEADER -->
                 <div class="header">
                     <!-- <div class="logo">DBCLKK</div> -->
-                    <form class="form-search">
-                        <div class="input-gr">
-                            <!-- <input type="text" class="form-control" placeholder="Tìm theo địa điểm..."> -->
-                            <select name="selectDistrict" class="form-control" id="selectDistrict">
-                                <option value="">Tìm theo địa điểm...</option>
-                            </select>
-                            <button class="btn btn-secondary" type="submit">Tìm</button>
-                        </div>
-                    </form>
+{#                    <form class="form-search">#}
+{#                        <div class="input-gr">#}
+{#                            <!-- <input type="text" class="form-control" placeholder="Tìm theo địa điểm..."> -->#}
+{#                            <select name="selectDistrict" class="form-control" id="selectDistrict">#}
+{#                                <option value="">Tìm theo địa điểm...</option>#}
+{#                            </select>#}
+{#                            <button class="btn btn-secondary" type="submit">Tìm</button>#}
+{#                        </div>#}
+{#                    </form>#}
                     <div class="menu">
                         <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
@@ -72,7 +73,8 @@
                             <div class="select-date">
                                 <input type="text" class="form-control" id="date">
                             </div>
-                            <div class="control-product">
+                            <div class="control-product" style="
+    visibility: hidden;">
                                 <select name="selectProduct" class="form-control arrow-white" id="selectProduct">
                                 </select>
                             </div>
@@ -127,7 +129,7 @@
     <!-- Bootstrap -->
     <script src="static/lib/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
     <!-- Swiper -->
-    <script src="static/js/lib/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.4/swiper-bundle.js"></script>
     <!-- Leaflet JS -->
     <script src="static/lib/leaflet/leaflet.js"></script>
     <!-- Main JS -->
