@@ -4,28 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7372411f-8210-4a1e-8d11-2ee93a0cc9a5" name="Changes" comment="init">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/inc/_global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/inc/_global.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/index-dist.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/index-dist.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/index.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/index.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/index_bk.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/index_bk.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/statistic.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/statistic.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/statistic.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/statistic.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/statistic.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/data/province/province_geo.json" beforeDir="false" afterPath="$PROJECT_DIR$/static/data/province/province_geo.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/inc/main-map.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/inc/main-map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/main-dist.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main-dist.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/main-dist.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main-dist.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/statistic-dist.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/statistic-dist.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/statistic.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/statistic.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/prepros.config" beforeDir="false" afterPath="$PROJECT_DIR$/static/prepros.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/statistic.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/statistic.html" afterDir="false" />
-    </list>
+    <list default="true" id="7372411f-8210-4a1e-8d11-2ee93a0cc9a5" name="Changes" comment="Update statistic" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -113,7 +92,7 @@
       <workItem from="1699714317995" duration="30704000" />
       <workItem from="1700887699607" duration="673000" />
       <workItem from="1700963676281" duration="861000" />
-      <workItem from="1700986971347" duration="6757000" />
+      <workItem from="1700986971347" duration="7412000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -123,7 +102,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699691691667</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Update statistic">
+      <option name="closed" value="true" />
+      <created>1701050731954</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701050731954</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,7 +118,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
-    <option name="LAST_COMMIT_MESSAGE" value="init" />
+    <MESSAGE value="Update statistic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update statistic" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
