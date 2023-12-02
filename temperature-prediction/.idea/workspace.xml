@@ -4,7 +4,244 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7372411f-8210-4a1e-8d11-2ee93a0cc9a5" name="Changes" comment="Update statistic" />
+    <list default="true" id="7372411f-8210-4a1e-8d11-2ee93a0cc9a5" name="Changes" comment="Update statistic">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/automation/auto_handle.py" beforeDir="false" afterPath="$PROJECT_DIR$/automation/auto_handle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manual_db/1-insert_district_to_db.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manual_db/2-insert_product_val_to_db.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manual_db/2.1-insert_no2_to_db.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manual_db/2.2-insert_so2_to_db.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manual_db/2.3-insert_hcho_to_db.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manual_db/2.4-insert_co_to_db.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manual_db/2.5-insert_o3_to_db.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manual_db/2B-insert_product_pm2.5_to_db.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manual_db/3-insert_product_predict_to_db.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manual_db/3B-insert_product_pm25_predict_to_db.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manual_db/data/data-pm2.5-lanh-su-quan-hcm-20160211.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manual_db/data/data-pm2.5-lanh-su-quan-hcm.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manual_db/handle_district.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manual_db/handle_no2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manual_db/handle_product.py" beforeDir="false" afterPath="$PROJECT_DIR$/manual_db/handle_product.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manual_db/models-py/rnn-lstm-no2/keras_metadata.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manual_db/models-py/rnn-lstm-no2/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manual_db/models-py/rnn-lstm-no2/scaler.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manual_db/models-py/rnn-lstm-no2/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manual_db/models-py/rnn-lstm-no2/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/1-analysis-hcm-period-day-pm2.5.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/1-analysis-hcm-period-day.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/1-analysis-hcm-period-month-pm2.5.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/1-analysis-hcm-period-month.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/1-linear-regression.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2-analysis-district-drop-zeros.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.1-RNN-ch4.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.1-RNN-co.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.1-RNN-hcho.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.1-RNN-no2.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.1-RNN-o3.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.1-RNN-so2.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.2-RNN-GRU-co.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.2-RNN-GRU-co.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.2-RNN-GRU-hcho.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.2-RNN-GRU-hcho.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.2-RNN-GRU-no2.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.2-RNN-GRU-no2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.2-RNN-GRU-o3.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.2-RNN-GRU-o3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.2-RNN-GRU-pm2.5.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.2-RNN-GRU-pm2.5.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.2-RNN-GRU-so2.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.2-RNN-GRU-so2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.2-RNN-LSTM-UnivariateTimeSeries.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.2-RNN-LSTM-ch4.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.2-RNN-LSTM-co.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.2-RNN-LSTM-co.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.2-RNN-LSTM-hcho.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.2-RNN-LSTM-hcho.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.2-RNN-LSTM-no2-load-predict.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.2-RNN-LSTM-no2-load-predict.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.2-RNN-LSTM-no2.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.2-RNN-LSTM-no2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.2-RNN-LSTM-o3.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.2-RNN-LSTM-o3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.2-RNN-LSTM-pm2.5.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.2-RNN-LSTM-pm2.5.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.2-RNN-LSTM-so2-load-predict.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.2-RNN-LSTM-so2-load-predict.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.2-RNN-LSTM-so2.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.2-RNN-LSTM-so2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/2.2-RNN-Simple-no2.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/collect-district-all-2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/collect-district-all-3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/collect-district-all.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/collect-district-seperate.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/collect-no2-district.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/dataset/data-pm2.5-lanh-su-quan-hcm-20160211-20211203.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/dataset/hcm.csv" beforeDir="false" afterPath="$PROJECT_DIR$/module/dataset/hcm.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/dataset/lanh-su-quan-hoa-ky-hcm-pm2.5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/dataset/q1-20210810.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/dataset/q1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-GRU-co/keras_metadata.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-GRU-co/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-GRU-co/scaler.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-GRU-co/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-GRU-co/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-GRU-hcho/keras_metadata.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-GRU-hcho/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-GRU-hcho/scaler.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-GRU-hcho/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-GRU-hcho/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-GRU-no2/keras_metadata.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-GRU-no2/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-GRU-no2/scaler.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-GRU-no2/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-GRU-no2/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-GRU-o3/keras_metadata.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-GRU-o3/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-GRU-o3/scaler.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-GRU-o3/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-GRU-o3/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-GRU-pm2.5/keras_metadata.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-GRU-pm2.5/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-GRU-pm2.5/scaler.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-GRU-pm2.5/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-GRU-pm2.5/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-GRU-pm25/keras_metadata.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-GRU-pm25/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-GRU-pm25/scaler.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-GRU-pm25/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-GRU-pm25/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-GRU-so2/keras_metadata.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-GRU-so2/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-GRU-so2/scaler.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-GRU-so2/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-GRU-so2/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-LSTM-pm25/keras_metadata.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-LSTM-pm25/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-LSTM-pm25/scaler.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-LSTM-pm25/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-LSTM-pm25/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-lstm-co/keras_metadata.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-lstm-co/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-lstm-co/scaler.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-lstm-co/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-lstm-co/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-lstm-hcho/keras_metadata.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-lstm-hcho/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-lstm-hcho/scaler.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-lstm-hcho/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-lstm-hcho/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-lstm-no2/keras_metadata.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-lstm-no2/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-lstm-no2/scaler.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-lstm-no2/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-lstm-no2/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-lstm-o3/keras_metadata.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-lstm-o3/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-lstm-o3/scaler.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-lstm-o3/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-lstm-o3/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-lstm-pm2.5/keras_metadata.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-lstm-pm2.5/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-lstm-pm2.5/scaler.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-lstm-pm2.5/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-lstm-pm2.5/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-lstm-so2/keras_metadata.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-lstm-so2/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-lstm-so2/scaler.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-lstm-so2/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models-py/rnn-lstm-so2/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-GRU-hcho/keras_metadata.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-GRU-hcho/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-GRU-hcho/scaler.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-GRU-hcho/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-GRU-hcho/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-GRU-no2/keras_metadata.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-GRU-no2/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-GRU-no2/scaler.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-GRU-no2/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-GRU-no2/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-GRU-o3/keras_metadata.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-GRU-o3/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-GRU-o3/scaler.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-GRU-o3/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-GRU-o3/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-GRU-pm2.5/keras_metadata.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-GRU-pm2.5/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-GRU-pm2.5/scaler.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-GRU-pm2.5/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-GRU-pm2.5/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-GRU-pm25/keras_metadata.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-GRU-pm25/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-GRU-pm25/scaler.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-GRU-pm25/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-GRU-pm25/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-GRU-so2/keras_metadata.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-GRU-so2/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-GRU-so2/scaler.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-GRU-so2/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-GRU-so2/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-LSTM-pm25/keras_metadata.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-LSTM-pm25/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-LSTM-pm25/scaler.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-LSTM-pm25/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-LSTM-pm25/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-gru-co/keras_metadata.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-gru-co/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-gru-co/scaler.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-gru-co/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-gru-co/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-lstm-co/keras_metadata.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-lstm-co/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-lstm-co/scaler.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-lstm-co/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-lstm-co/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-lstm-hcho/keras_metadata.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-lstm-hcho/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-lstm-hcho/scaler.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-lstm-hcho/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-lstm-hcho/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-lstm-no2/keras_metadata.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-lstm-no2/model.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-lstm-no2/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-lstm-no2/scaler.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-lstm-no2/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-lstm-no2/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-lstm-o3/keras_metadata.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-lstm-o3/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-lstm-o3/scaler.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-lstm-o3/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-lstm-o3/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-lstm-pm2.5/keras_metadata.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-lstm-pm2.5/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-lstm-pm2.5/scaler.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-lstm-pm2.5/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-lstm-pm2.5/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-lstm-so2/keras_metadata.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-lstm-so2/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-lstm-so2/scaler.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-lstm-so2/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/models/rnn-lstm-so2/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/module_1_LogisticRegressionAndNaiveBayes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/module_2_linear-regression.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/predict-no2-LinearRegression.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/predict_no2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/prediction.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/prediction_2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/statistic.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/statistic.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/statistic.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/statistic.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/inc/main-map.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/inc/main-map.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/main-dist.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main-dist.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/main-dist.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main-dist.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/statistic-dist.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/statistic-dist.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/statistic-dist.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/statistic-dist.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/statistic.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/statistic.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/prepros.config" beforeDir="false" afterPath="$PROJECT_DIR$/static/prepros.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/no2-demo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/statistic.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/statistic.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +249,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;tamnv0310&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="2d3c811a-57e5-4737-9574-db84e61e80b3" />
+        <option name="url" value="https://github.com/tamnv0310/LuanAn.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -27,7 +278,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/ThresisSource/temperature-prediction-main/temperature-prediction&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/ThresisSource/temperature-prediction-main/temperature-prediction/manual_db&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -35,6 +286,15 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ThresisSource\temperature-prediction-main\temperature-prediction\manual_db" />
+      <recent name="D:\ThresisSource\temperature-prediction-main\temperature-prediction\manual_db\models-py" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\ThresisSource\temperature-prediction-main\temperature-prediction\manual_db" />
+    </key>
+  </component>
   <component name="RunManager" selected="Flask server.temperature-prediction">
     <configuration name="temperature-prediction" type="PythonConfigurationType" factoryName="Python">
       <module name="temperature-prediction" />
@@ -65,7 +325,7 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -92,7 +352,11 @@
       <workItem from="1699714317995" duration="30704000" />
       <workItem from="1700887699607" duration="673000" />
       <workItem from="1700963676281" duration="861000" />
-      <workItem from="1700986971347" duration="7412000" />
+      <workItem from="1700986971347" duration="8295000" />
+      <workItem from="1701179950806" duration="55000" />
+      <workItem from="1701183807554" duration="2718000" />
+      <workItem from="1701338991485" duration="12748000" />
+      <workItem from="1701356223219" duration="25853000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -126,23 +390,58 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/static/js/inc/main-map.js</url>
-          <line>259</line>
+          <line>90</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/static/js/inc/main-map.js</url>
-          <line>73</line>
+          <line>72</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/static/js/statistic.js</url>
-          <line>414</line>
-          <option name="timeStamp" value="3" />
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/server.py</url>
+          <line>67</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/automation/auto_handle.py</url>
+          <line>81</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/automation/auto_handle.py</url>
+          <line>108</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/automation/auto_handle.py</url>
+          <line>106</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/server.py</url>
+          <line>77</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/automation/auto_handle.py</url>
+          <line>119</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/automation/auto_handle.py</url>
+          <line>152</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/server.py</url>
+          <line>56</line>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/temperature_prediction$temperature_prediction.coverage" NAME="temperature-prediction Coverage Results" MODIFIED="1699832272531" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/temperature_prediction$temperature_prediction.coverage" NAME="temperature-prediction Coverage Results" MODIFIED="1701508744049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

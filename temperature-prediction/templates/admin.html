@@ -3,7 +3,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Admin | Dự báo chất lượng không khí - TP Hồ Chí Minh</title>
+    <title>Trang quản lý | Dự báo nhiệ5 độ không khí ở vùng Đồng Nam Bộ</title>
     <!-- jQuery UI -->
     <link rel="stylesheet" href="static/lib/jquery-ui-1.13.custom/jquery-ui.min.css">
     <!-- Bootstrap -->
@@ -17,33 +17,28 @@
 <body class="pt-5">
     <section>
         <div class="container">
+            <h2 class="mb-3 title">Trang khởi tạo dữ liệu của ứng dụng</h2>
             <div class="row">
                 <div class="col-12">
-                    <button id="collect-dataset" class="btn btn-primary mb-1">Collect Dataset from Sentinel-Hub</button>
+                    <button id="collect-dataset" class="btn btn-danger mb-1">Tải dữ liệu tử POWER NASA</button>
                     <p id="msg-collect-dataset"></p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <button id="collect-dataset-district" class="btn btn-primary mb-1">Collect Dataset to districts</button>
-                    <p id="msg-collect-dataset-district"></p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <button id="add-district-to-db" class="btn btn-primary mb-1">Add district to Database</button>
+                    <button id="add-district-to-db" class="btn btn-danger mb-1">Lưu các tỉnh/thành tới CSDL</button>
                     <p id="msg-add-district-to-db"></p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <button id="add-data-to-db" class="btn btn-primary mb-1">Add data to Database</button>
+                    <button id="add-data-to-db" class="btn btn-danger mb-1">Thêm dữ liệu thực tế tới CSDL</button>
                     <p id="msg-add-data-to-db"></p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <button id="add-data-predict-to-db" class="btn btn-primary mb-1">Add data forecast to Database</button>
+                    <button id="add-data-predict-to-db" class="btn btn-danger mb-1">Thêm dữ liệu dự đoán tới CSDL</button>
                     <p id="msg-add-data-predict-to-db"></p>
                 </div>
             </div>
@@ -53,18 +48,11 @@
     <!-- FOOTER -->
     <footer>
         <div class="container pt-4">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h5>Hệ thống dự báo chất lượng không khí đô thị</h5>
-                    <p><i>Luận văn thạc sĩ năm 2021, Trường Đại Học Công nghệ thông tin - ĐHQG TP.HCM. Nội dung chính
-                            gồm phân tích và dự báo Chất lượng không khí tại TP.HCM</i></p>
-                </div>
-                <div class="col-lg-6">
-                    <h5>Tác giả</h5>
-                    <p><i>Thực hiện: Nguyễn Thành Phong - Mã HV: CH1902014<br>Hướng dẫn: TS. Dương Thị Thúy Nga - Đại
+            <div class="container pt-4" style="text-align: center;">
+           <h5>Hệ thống dự báo nhiệt độ không khí</h5>
+                    <p><i>Thực hiện: Nguyễn Văn Tâm - Mã HV: CH1902018<br>Hướng dẫn: TS. Dương Thị Thúy Nga - Đại
                             học Tài nguyên và Môi trường TP.HCM</i></p>
-                </div>
-            </div>
+        </div>
         </div>
     </footer>
     <!-- jQquery -->

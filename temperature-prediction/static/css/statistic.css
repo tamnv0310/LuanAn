@@ -157,6 +157,11 @@ select.form-control.arrow-white {
   }
 }
 
+.btn {
+  background-color: #5dbea3 !important;
+  color: white !important;
+}
+
 .title {
   -webkit-box-align: center;
       -ms-flex-align: center;

@@ -10,7 +10,6 @@ item_list = {
 }
 
 var province_define = null;
-var provinceFeatures = [];
 var districtFeatures = [];
 var markers = null;
 var geojson = null;
@@ -56,11 +55,11 @@ function initMap() {
         "Streets": streets
     };
 
-    var district_markers = {
+    var show_location = {
         "Hiển thị tên địa điểm": markers
     };
 
-    L.control.layers(baseLayers, district_markers).addTo(map);
+    L.control.layers(baseLayers, show_location).addTo(map);
 
     // control that shows state info on hover
     info = L.control();
@@ -76,180 +75,12 @@ function initMap() {
         var dist_name = (props && props["name"]) ? item_list[props["name"]][2] : "";
         this._div.innerHTML = '<h4>Địa điểm</h4>' +
             (props ? '<p><b>' + dist_name + '</b></p><p>'
-                +props.textType+ '<b><span class="circle color" style="background-color: ' + props.color + '"></span><span> ' + props.density + '</span></b> ' + props.unit + '</p><p style="text-align: right; margin-bottom: 0;"><i><small>' + 'Thứ hai, 2/10/2023' + '</small></i></p>'
+                +props.textType+ '<b><span class="circle color" style="background-color: ' + props.color + '"></span><span> ' + props.density + '</span></b> ' + props.unit + '</p><p style="text-align: right; margin-bottom: 0;"><i><small>' + props.date + '</small></i></p>'
                 : '');
     };
 
     info.addTo(map);
 
-
-
-
-    // // add text labels:
-    // var loc = new L.LatLng(10.780612857979111,106.69929097226942);
-
-
-    // var icon = L.divIcon({
-    //     iconSize:null,
-    //     html:'<div class="map-label"><div class="map-label-content">'+111222+'</div></div>'
-    //   });
-
-    // L.marker(loc,{icon: icon}).addTo(map);
-
-
-
-    // var vietnam_define = null;
-    // $.getJSON("static/data/province/vietnam_define.json", function (data) {
-    //     vietnam_define = data;
-    // });
-    //
-    // $.getJSON("static/data/province/vietnam.json", function (data) {
-    //     var _province = data["features"];
-    //     for (var i in _province) {
-    //         var k = _province[i]["properties"]["slug"];
-    //         //kiểm tra trong 63 tỉnh, tỉnh nào mình define thì mới them geometry vô
-    //         if(vietnam_define[k]){
-    //             var coordinates = _province[i]["geometry"]["coordinates"];
-    //             var mergedCoordinates = [];
-    //             for(var i in coordinates){
-    //                 console.log(88899, coordinates[i][0]);
-    //                 mergedCoordinates = mergedCoordinates.concat(coordinates[i][0])
-    //             }
-    //             console.log(999999, mergedCoordinates)
-    //             vietnam_define[k]["geometry"] = {"coordinates": []};
-    //             vietnam_define[k]["geometry"]["coordinates"].push(mergedCoordinates);
-    //         }
-    //     }
-    //     debugger
-    //     console.log("Vietnam tinh thanh list define: ", vietnam_define)
-    //     for (const [key, value] of Object.entries(vietnam_define)) {
-    //         var _geo = {
-    //             "type": "Feature",
-    //             "properties": {
-    //                 "name": value["distId"],
-    //                 "date": "...",
-    //                 "textType": "...",
-    //                 "density": "...",
-    //                 "unit": "µmol/㎡",
-    //                 "product": "...",
-    //                 "alertMsg": "...",
-    //                 "alertMsgColor": "#ffffff",
-    //                 "color": "#fff",
-    //                 "style": {
-    //                     weight: 2.5,
-    //                     dashArray: '3',
-    //                     color: "#a6a6a6",
-    //                     opacity: opacityDefault,
-    //                     fillColor: "#a6a6a6",
-    //                     fillOpacity: fillOpacityDefault
-    //                 },
-    //                 "show_on_map": true
-    //             },
-    //             "geometry": {
-    //                 "type": "Polygon",
-    //                 // "coordinates": [value["geometry"]["coordinates"]],
-    //                "coordinates": [
-    //                 [
-    //                     [
-    //                         106.58635813600004,
-    //                         8.735319939000073
-    //                     ],
-    //                     [
-    //                         106.58699194300009,
-    //                         8.735887579000055
-    //                     ],
-    //                     [
-    //                         106.587070345,
-    //                         8.736490905000059
-    //                     ],
-    //                     [
-    //                         106.58707298100003,
-    //                         8.7371150770001
-    //                     ],
-    //                     [
-    //                         106.58691776000008,
-    //                         8.737479823000081
-    //                     ],
-    //                     [
-    //                         106.58660532700007,
-    //                         8.737741206000036
-    //                     ],
-    //                     [
-    //                         106.58603073600005,
-    //                         8.737795625
-    //                     ],
-    //                     [
-    //                         106.58519421000003,
-    //                         8.73769509500004
-    //                     ],
-    //                     [
-    //                         106.58420069700006,
-    //                         8.737543207000085
-    //                     ],
-    //                     [
-    //                         106.583520494,
-    //                         8.73733798600007
-    //                     ],
-    //                     [
-    //                         106.58257770500006,
-    //                         8.73682178300008
-    //                     ],
-    //                     [
-    //                         106.58215812100008,
-    //                         8.736459430000119
-    //                     ],
-    //                     [
-    //                         106.58189574800005,
-    //                         8.736200442
-    //                     ],
-    //                     [
-    //                         106.5817773210001,
-    //                         8.7359675630001
-    //                     ],
-    //                     [
-    //                         106.58181442400007,
-    //                         8.73564980500001
-    //                     ],
-    //                     [
-    //                         106.58215329700003,
-    //                         8.73531512600003
-    //                     ],
-    //                     [
-    //                         106.58305786800001,
-    //                         8.735145419000022
-    //                     ],
-    //                     [
-    //                         106.58434691800008,
-    //                         8.735045884000046
-    //                     ],
-    //                     [
-    //                         106.58531627700009,
-    //                         8.735033334000073
-    //                     ],
-    //                     [
-    //                         106.58635813600004,
-    //                         8.735319939000073
-    //                     ]
-    //                 ]
-    //                 ]
-    //             }
-    //         }
-    //         debugger
-    //         provinceFeatures.push(_geo);
-    //     }
-    //
-    //     geojson = L.geoJSON(provinceFeatures, {
-    //         filter: function (feature, layer) {
-    //             return feature.properties.show_on_map;
-    //         },
-    //         style: function (feature) {
-    //             return feature.properties.style;
-    //         },
-    //         onEachFeature: onEachFeature
-    //     }).bindPopup(function (layer) {
-    //         return layer.feature.properties.popupContent;
-    //     }).addTo(map);
-    // });
 
 
     $.getJSON("static/data/province/province_define.json", function (data) {

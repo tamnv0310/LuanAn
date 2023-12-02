@@ -4,7 +4,7 @@
 var district_data = [];
 var future_count = 5;
 var dataStartDate = "01/10/1981";
-var dumpDate = "10/03/2023";
+var dumpDate = "03/02/2023";
 const weekday = new Array(7);
 weekday[0] = "Chủ nhật";
 weekday[1] = "Thứ hai";
@@ -38,6 +38,8 @@ const product_list = {
 }
 
 var dateSwiper;
+
+
 
 $(function () {
   initMap();
@@ -197,29 +199,53 @@ function triggerGetData() {
     var dt = $this.attr("data-value");
     $('#date').datepicker("setDate", dt);
     dateSwiper.slideTo(pos);
-    getDataByDate($this.attr("data-value"), $("#selectProduct").val(), $this.hasClass("forecast"));
+    getDataByDate($this.attr("data-value"), $this.hasClass("forecast"));
   });
 }
 
-//tham số date, sản phẩm: temperature, có phải là dự báo không (ngày tương lai của hiện tại thì true)
-function getDataByDate(date, product, isForecast) {
-  //api lấy data....
-  //đây là data giả
-  let res = {
-    "product_id": "temperature",
-    "query_date": "2023-11-12",
-    "data": {
-      "vungtau": 29,
-      "dongnai": 31,
-      "binhphuoc": 32,
-      "tayninh": 32,
-      "hcm": 32,
-      "binhduong": 32,
-    }
+async function fetchData(url) {
+  try {
+      const response = await $.get(url);
+      return response;
+  } catch (error) {
+      console.error("Error fetching data: ", error);
   }
+}
 
-  console.log("Data on ", date, res);
+//tham số date, sản phẩm: temperature, có phải là dự báo không (ngày tương lai của hiện tại thì true)
+function getDataByDate(date, isForecast) {
+  var res = {
+    // "query_date": "2023-10-03 00:00:00",
+    // "data": {
+    //   "binhduong": 30,
+    //   "binhphuoc": 26.1,
+    //   "vungtau": 24.9,
+    //   "dongnai": 23.34,
+    //   "tayninh": 25.11,
+    //   "hcm": 25.05
+    // }
+  }
+  //api lấy data....
+  var url = '/get-temperature/all-provinces/' + date;
+  $.get(url, {})
+    .done(function (response) {
+      debugger
+      // Now, this code will execute after the AJAX response is received
+      console.log("Data on ", date, res)
+      processData(response, isForecast)
+    }).fail(function (error) {
+      console.error("Error in AJAX request: ", error);
+    });
+}
 
+function processData(res, isForecast) {
+
+  console.log("Received in processData: ", res); // Kiểm tra loại của 'res'
+  // Ensure 'res' is not undefined
+  if (!res) {
+    console.error("No data available in 'res'");
+    return;
+  }
   var max = 50; //50 độ C
   var query_date = res["query_date"];
 
@@ -227,9 +253,17 @@ function getDataByDate(date, product, isForecast) {
     if (geojson) {
       //Update layers features
       for (var i in districtFeatures) {
+        console.log("Current res: ", res); // Check the value of res
         var dist_id = districtFeatures[i]["properties"]["name"];
-        var density_tmp = parseFloat(res["data"][dist_id]).toFixed(2);
-        var density_val = Number(density_tmp).toLocaleString('vi-VN');
+        console.log("dist_id: ", dist_id); // Check the value of res
+        var density_tmp;
+        var density_val;
+        console.log("res_data ", res["data"])
+        if (res["data"]) {
+          density_tmp = parseFloat(res["data"][dist_id]).toFixed(2);
+          console.log("density_tmp ", density_tmp)
+          density_val = Number(density_tmp).toLocaleString('vi-VN');
+        }
         console.log("density_val: ", density_val)
         districtFeatures[i]["properties"]["textType"] = isForecast ? "<b>Dự báo: </b>" : "<b>POWER NASA: </b>";
         districtFeatures[i]["properties"]["density"] = density_val;
@@ -247,9 +281,8 @@ function getDataByDate(date, product, isForecast) {
       })
       clearInterval(waitingMap);
     }
-  }, 250)
+  }, 250, res)
 }
-
 function getColor(val, max, colorCodeRange) {
   var _colorCode = "#a6a6a6";
   for (var i in colorCodeRange) {
